@@ -9,27 +9,27 @@ import 'package:global_lang_ai/core/utils/custom_svg.dart';
 // ──────────────────────────────────────────────
 
 // Colors (same as CustomTextField)
-const _backgroundColor = Colors.white;
+final _backgroundColor = AppColors.blue[50]!;
 final _focusBorderColor = AppColors.blue[300]!;
-final _defaultBorderColor = AppColors.blue[100]!;
+final _defaultBorderColor = Colors.transparent;
 const _errorColor = AppColors.error;
 
 // Border
 const _defaultBorderWidth = 0.5;
-const _focusBorderWidth = 0.5;
-const _defaultRadius = 24.0;
+const _focusBorderWidth = 1.0;
+const _defaultRadius = 99.0;
 
 // Sizing
 const _defaultHeight = 56.0;
-const _horizontalPadding = 20.0;
+const _horizontalPadding = 24.0;
 const _iconSize = 24.0;
 
 // Title
-const _titleBottomPadding = 4.0;
-final _titleStyle = AppTexts.tmdr;
+const _titleBottomPadding = 8.0;
+final _titleStyle = AppTexts.bodyLRegular;
 
 // Text
-final _inputStyle = AppTexts.tsmm;
+final _inputStyle = AppTexts.bodyXlRegular;
 final _hintColor = AppColors.black[300]!;
 
 // Error text
@@ -197,7 +197,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
                                 horizontal: _horizontalPadding,
                               ),
                               color: isSelected
-                                  ? AppColors.blue[25]
+                                  ? AppColors.blue[50]
                                   : Colors.transparent,
                               alignment: Alignment.centerLeft,
                               child: Text(

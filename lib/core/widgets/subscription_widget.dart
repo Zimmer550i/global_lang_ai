@@ -45,9 +45,9 @@ const _buttonHorizontalPadding = 18.0;
 const _bottomSpacing = 20.0;
 
 // Typography
-final _titleStyle = AppTexts.tlgm;
-final _featuresLabelStyle = AppTexts.tmdm;
-final _featureItemStyle = AppTexts.tmdm;
+final _titleStyle = AppTexts.buttonLMedium;
+final _featuresLabelStyle = AppTexts.buttonMMedium;
+final _featureItemStyle = AppTexts.buttonMMedium;
 
 // ──────────────────────────────────────────────
 

@@ -9,37 +9,36 @@ import 'package:global_lang_ai/core/utils/app_texts.dart';
 // ──────────────────────────────────────────────
 
 // Colors
-const _backgroundColor = Colors.white;
-const _focusBorderColor = AppColors.blue;
-const _defaultBorderColor = AppColors.black;
-const _cursorColor = AppColors.blue;
-const _errorColor = AppColors.error;
+final _backgroundColor = AppColors.blue[50]!;
+final _focusBorderColor = AppColors.blue;
+final _defaultBorderColor = Colors.transparent;
+final _cursorColor = AppColors.blue;
+final _errorColor = AppColors.error;
 
 // Border
 const _defaultBorderWidth = 1.0;
 const _focusBorderWidth = 1.5;
-const _defaultBorderShade = 200; // shade of _defaultBorderColor
-const _defaultRadius = 12.0;
+const _defaultRadius = 99.0;
 
 // Sizing
-const _defaultHeight = 50.0;
-const _horizontalPadding = 16.0;
+const _defaultHeight = 56.0;
+const _horizontalPadding = 24.0;
 const _multilineVerticalPadding = 20.0;
-const _iconSize = 20.0;
-const _itemSpacing = 12.0;
+const _iconSize = 24.0;
+const _itemSpacing = 10.0;
 
 // Icon colors
 const _iconFocusedColor = AppColors.blue;
-final _iconUnfocusedColor = AppColors.blue.shade100;
-final _toggleIconUnfocusedColor = AppColors.black.shade100;
+final _iconUnfocusedColor = AppColors.black.shade200;
+final _toggleIconUnfocusedColor = AppColors.black.shade200;
 
 // Title
 const _titleBottomPadding = 8.0;
-final _titleStyle = AppTexts.txsb;
+final _titleStyle = AppTexts.bodyLRegular;
 
 // Input text
-final _inputStyle = AppTexts.tsmr;
-final _hintColor = AppColors.black[300]!;
+final _inputStyle = AppTexts.bodyXlRegular;
+final _hintColor = AppColors.black[200]!;
 
 // Error text
 const _errorHorizontalPadding = 24.0;
@@ -141,7 +140,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       width: _focusBorderWidth,
                     )
                   : Border.all(
-                      color: _defaultBorderColor[_defaultBorderShade]!,
+                      color: _defaultBorderColor,
                       width: _defaultBorderWidth,
                     ),
             ),

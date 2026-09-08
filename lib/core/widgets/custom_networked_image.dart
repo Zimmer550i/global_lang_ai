@@ -15,7 +15,7 @@ final _errorBackgroundColor = AppColors.black.shade200;
 final _errorIconColor = AppColors.black.shade400;
 final _errorTextColor = AppColors.black.shade400;
 final _shimmerBaseColor = AppColors.blue.shade300;
-final _shimmerHighlightColor = AppColors.blue[25]!;
+final _shimmerHighlightColor = AppColors.blue[50]!;
 const _shimmerChildColor = Colors.white;
 
 // Sizing
@@ -25,7 +25,7 @@ const _defaultRadius = 10.0;
 const _shimmerDuration = Duration(milliseconds: 800);
 
 // Typography
-final _errorTextStyle = AppTexts.tsmr;
+final _errorTextStyle = AppTexts.bodyLRegular;
 
 // ──────────────────────────────────────────────
 

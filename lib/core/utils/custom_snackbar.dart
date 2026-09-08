@@ -24,7 +24,7 @@ void customSnackBar(String message, {bool isError = true, String? title}) {
 
     messageText: Text(
       message,
-      style: AppTexts.tmdm.copyWith(color: isError ? Colors.white : null),
+      style: AppTexts.buttonMMedium.copyWith(color: isError ? Colors.white : null),
     ),
 
     backgroundColor: isError

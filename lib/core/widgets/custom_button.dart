@@ -8,21 +8,21 @@ import 'package:global_lang_ai/core/utils/app_texts.dart';
 // ──────────────────────────────────────────────
 
 // Primary button colors
-final _primaryColor = AppColors.blue.shade500;
-final _primaryDisabledColor = AppColors.blue.shade300;
+final _primaryColor = AppColors.yellow.shade500;
+final _primaryDisabledColor = AppColors.yellow.shade300;
 final _primaryTextColor = Colors.white;
 final _primaryIconColor = Colors.white;
 final _primaryLoaderColor = Colors.white;
 
 // Secondary button colors
 final _secondaryColor = AppColors.blue[50]!;
-const _secondaryBorderColor = AppColors.blue;
-const _secondaryTextColor = AppColors.blue;
-const _secondaryIconColor = AppColors.blue;
-const _secondaryLoaderColor = AppColors.blue;
+const _secondaryBorderColor = Colors.transparent;
+final _secondaryTextColor = AppColors.black[300]!;
+final _secondaryIconColor = AppColors.black[300]!;
+final _secondaryLoaderColor = AppColors.black[300]!;
 
 // Sizing defaults
-const _defaultHeight = 50.0;
+const _defaultHeight = 52.0;
 const _defaultWidth = double.infinity;
 const _defaultPadding = 40.0;
 const _defaultRadius = 99.0;
@@ -36,7 +36,7 @@ const _loaderPadding = 8.0;
 const _animationDuration = Duration(milliseconds: 100);
 
 // Typography
-final _textStyle = AppTexts.tmdm;
+final _textStyle = AppTexts.buttonMMedium;
 
 // ──────────────────────────────────────────────
 

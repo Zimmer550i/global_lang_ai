@@ -38,7 +38,7 @@ class _DesignSystemState extends State<DesignSystem> {
         spacing: 20,
         children: [
           const SizedBox(),
-          Logo(showName: true),
+          Logo(),
           const SizedBox(),
           ProfilePicture(
             imageFile: _image,
@@ -51,7 +51,11 @@ class _DesignSystemState extends State<DesignSystem> {
             isEditable: true,
           ),
           const SizedBox(),
-          CustomTextField(title: "Email", hintText: "Enter your email"),
+          CustomTextField(
+            title: "Email",
+            leading: "assets/icons/email.svg",
+            hintText: "Enter your email",
+          ),
           CustomTextField(
             title: "Password",
             hintText: "Enter your password",

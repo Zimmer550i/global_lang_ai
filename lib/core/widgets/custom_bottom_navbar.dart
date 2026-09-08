@@ -24,7 +24,7 @@ const _shadowBlur = 16.0;
 const _shadowAlpha = 27;
 
 // Typography
-final _labelStyle = AppTexts.tsmm;
+final _labelStyle = AppTexts.buttonSMedium;
 
 // ──────────────────────────────────────────────
 
