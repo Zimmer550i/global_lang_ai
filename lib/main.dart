@@ -6,7 +6,7 @@ import 'package:global_lang_ai/core/utils/message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:global_lang_ai/features/design_system.dart';
+import 'package:global_lang_ai/features/auth/views/splash.dart';
 import 'core/controllers/localization_controller.dart';
 import 'core/controllers/theme_controller.dart';
 import 'core/helpers/di.dart' as di;
@@ -18,7 +18,7 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       statusBarColor: AppColors.blue[600],
-      statusBarIconBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.dark,
     ),
   );
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
               transitionDuration: const Duration(milliseconds: 500),
               getPages: AppRoutes.pages,
               // initialRoute: AppRoutes.splash,
-              home: DesignSystem(),
+              home: Splash(),
             );
           },
         );

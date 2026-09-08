@@ -4,6 +4,7 @@ import 'package:global_lang_ai/core/utils/app_colors.dart';
 import 'package:global_lang_ai/core/utils/app_icons.dart';
 import 'package:global_lang_ai/core/utils/app_texts.dart';
 import 'package:global_lang_ai/core/utils/custom_svg.dart';
+import 'package:global_lang_ai/core/widgets/logo.dart';
 
 // ──────────────────────────────────────────────
 // CUSTOMIZABLE VARIABLES — Change these to style
@@ -30,9 +31,9 @@ const _backIcon = AppIcons.back;
 // ──────────────────────────────────────────────
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title;
+  final String? title;
   final bool hasLeading;
-  const CustomAppBar({super.key, required this.title, this.hasLeading = true});
+  const CustomAppBar({super.key, this.title, this.hasLeading = true});
 
   @override
   Size get preferredSize => Size(double.infinity, kToolbarHeight);
@@ -49,30 +50,30 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Row(
           children: [
             SizedBox(width: _padding),
-            InkWell(
-              onTap: () => hasLeading ? Get.back() : null,
-              borderRadius: BorderRadius.circular(999),
-              child: Container(
-                height: _leadingSize,
-                width: _leadingSize,
-                decoration: BoxDecoration(
-                  color: _leadingColor,
-                  shape: .circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.05),
-                      offset: Offset(0, 5),
-                      blurRadius: 26,
+            hasLeading
+                ? InkWell(
+                    onTap: () => hasLeading ? Get.back() : null,
+                    borderRadius: BorderRadius.circular(999),
+                    child: Container(
+                      height: _leadingSize,
+                      width: _leadingSize,
+                      decoration: BoxDecoration(
+                        color: _leadingColor,
+                        shape: .circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.05),
+                            offset: Offset(0, 5),
+                            blurRadius: 26,
+                          ),
+                        ],
+                      ),
+                      child: Center(child: CustomSvg(asset: _backIcon)),
                     ),
-                  ],
-                ),
-                child: hasLeading
-                    ? Center(child: CustomSvg(asset: _backIcon))
-                    : const SizedBox(),
-              ),
-            ),
+                  )
+                : Logo(size: 32),
             const SizedBox(width: _titleLeftPadding),
-            Text(title, style: _titleStyle.copyWith(color: _titleColor)),
+            Text(title ?? "", style: _titleStyle.copyWith(color: _titleColor)),
           ],
         ),
       ),

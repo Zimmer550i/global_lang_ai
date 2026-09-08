@@ -115,7 +115,7 @@ class AppTexts {
       fontWeight: weight,
       height: height,
       letterSpacing: letterSpacing,
-      color: color ?? AppColors.black.shade900,
+      color: color ?? AppColors.black.shade400,
     );
   }
 
@@ -131,7 +131,7 @@ class AppTexts {
       fontWeight: weight,
       height: height,
       letterSpacing: letterSpacing,
-      color: color ?? AppColors.black.shade900,
+      color: color ?? AppColors.black.shade400,
     );
   }
 }

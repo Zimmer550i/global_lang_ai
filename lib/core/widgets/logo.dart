@@ -11,6 +11,7 @@ const _nameSpacing = 6.0;
 
 // Assets
 const _logoAsset = "assets/icons/logo";
+const _logoAssetWhite = "assets/icons/logo_white";
 const _logoName = "assets/icons/logo_name";
 const _logoExtension = ".svg";
 
@@ -19,7 +20,13 @@ const _logoExtension = ".svg";
 class Logo extends StatelessWidget {
   final double size;
   final bool showName;
-  const Logo({super.key, this.size = _defaultSize, this.showName = false});
+  final bool isWhite;
+  const Logo({
+    super.key,
+    this.size = _defaultSize,
+    this.isWhite = false,
+    this.showName = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +34,12 @@ class Logo extends StatelessWidget {
       spacing: _nameSpacing,
       children: [
         CustomSvg(
-          asset: "$_logoAsset$_logoExtension",
+          asset: "${isWhite ? _logoAssetWhite : _logoAsset}$_logoExtension",
           height: size,
           width: size,
         ),
         if (showName)
-          CustomSvg(
-            asset: "$_logoName$_logoExtension",
-            width: size * 4,
-          ),
+          CustomSvg(asset: "$_logoName$_logoExtension", width: size * 4),
       ],
     );
   }
