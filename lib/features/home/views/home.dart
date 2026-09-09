@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:get/get.dart';
 import 'package:global_lang_ai/core/models/cliclable_button_model.dart';
 import 'package:global_lang_ai/core/utils/app_colors.dart';
 import 'package:global_lang_ai/core/utils/app_texts.dart';
 import 'package:global_lang_ai/core/utils/custom_svg.dart';
 import 'package:global_lang_ai/core/widgets/custom_app_bar.dart';
+import 'package:global_lang_ai/features/home/views/history.dart';
+import 'package:global_lang_ai/features/home/views/notifications.dart';
 import 'package:global_lang_ai/features/home/widgets/progression.dart';
+import 'package:global_lang_ai/features/profile/views/profile.dart';
 
 /*
    * For whoever continues working on this project: 
@@ -44,9 +47,24 @@ class _HomeState extends State<Home> {
       appBar: CustomAppBar(
         hasLeading: false,
         actions: [
-          CliclableButtonModel(iconName: "history"),
-          CliclableButtonModel(iconName: "bell"),
-          CliclableButtonModel(iconName: "user"),
+          CliclableButtonModel(
+            iconName: "history",
+            onTap: () {
+              Get.to(() => History());
+            },
+          ),
+          CliclableButtonModel(
+            iconName: "bell",
+            onTap: () {
+              Get.to(() => Notifications());
+            },
+          ),
+          CliclableButtonModel(
+            iconName: "user",
+            onTap: () {
+              Get.to(() => Profile());
+            },
+          ),
         ],
       ),
       body: SingleChildScrollView(
