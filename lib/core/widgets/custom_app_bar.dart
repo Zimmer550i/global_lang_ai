@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:global_lang_ai/core/models/cliclable_button_model.dart';
 import 'package:global_lang_ai/core/utils/app_colors.dart';
 import 'package:global_lang_ai/core/utils/app_icons.dart';
 import 'package:global_lang_ai/core/utils/app_texts.dart';
@@ -33,7 +34,13 @@ const _backIcon = AppIcons.back;
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final bool hasLeading;
-  const CustomAppBar({super.key, this.title, this.hasLeading = true});
+  final List<CliclableButtonModel> actions;
+  const CustomAppBar({
+    super.key,
+    this.title,
+    this.hasLeading = true,
+    this.actions = const [],
+  });
 
   @override
   Size get preferredSize => Size(double.infinity, kToolbarHeight);
@@ -73,7 +80,38 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   )
                 : Logo(size: 32),
             const SizedBox(width: _titleLeftPadding),
-            Text(title ?? "", style: _titleStyle.copyWith(color: _titleColor)),
+            Expanded(
+              child: Text(
+                title ?? "",
+                style: _titleStyle.copyWith(color: _titleColor),
+              ),
+            ),
+
+            Row(
+              spacing: 12,
+              children: [
+                for (var i in actions)
+                  GestureDetector(
+                    onTap: i.onTap,
+                    child: Container(
+                      height: 32,
+                      width: 32,
+                      decoration: BoxDecoration(
+                        shape: .circle,
+                        color: Colors.white,
+                      ),
+                      child: Center(
+                        child: CustomSvg(
+                          asset: "assets/icons/${i.iconName}.svg",
+                          size: 24,
+                          color: AppColors.black.shade400,
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+            const SizedBox(width: _padding),
           ],
         ),
       ),

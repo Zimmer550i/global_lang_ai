@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:global_lang_ai/features/auth/views/language_selection.dart';
-import 'package:global_lang_ai/features/home/home.dart';
+import 'package:global_lang_ai/features/home/views/home.dart';
 
 class StartupController extends GetxController {
   final Duration splashTimeDefault = Duration(seconds: 2);
