@@ -7,6 +7,7 @@ class AuthController extends GetxController {
   final nameController = TextEditingController();
   final newPassController = TextEditingController();
   final confirmPassController = TextEditingController();
+  final otpController = TextEditingController();
 
   RxBool isLoading = RxBool(false);
   RxBool isSocialLoading = RxBool(false);

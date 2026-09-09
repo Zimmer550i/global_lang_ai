@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:global_lang_ai/features/auth/views/language_selection.dart';
+import 'package:global_lang_ai/features/home/home.dart';
 
 class StartupController extends GetxController {
   final Duration splashTimeDefault = Duration(seconds: 2);
@@ -19,8 +20,8 @@ class StartupController extends GetxController {
     goToSelectLanguage();
   }
 
-  void goToApp() {
-    Get.off(() => FlutterLogo());
+  void goToHome() {
+    Get.offAll(() => Home());
   }
 
   void goToAuthentication() {

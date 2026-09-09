@@ -7,16 +7,19 @@ import 'package:global_lang_ai/core/widgets/custom_app_bar.dart';
 import 'package:global_lang_ai/core/widgets/custom_button.dart';
 import 'package:global_lang_ai/core/widgets/custom_text_field.dart';
 import 'package:global_lang_ai/features/auth/controllers/auth_controller.dart';
+import 'package:global_lang_ai/features/auth/views/verification.dart';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});
 
   void onSubmit() async {
-    
+    Get.to(() => Verification(isResettingPass: true));
   }
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<AuthController>();
+
     return Scaffold(
       appBar: CustomAppBar(),
       body: Padding(
@@ -34,13 +37,19 @@ class ForgotPassword extends StatelessWidget {
               child: Column(
                 children: [
                   CustomTextField(
-                    controller: Get.find<AuthController>().emailController,
+                    controller: controller.emailController,
                     title: "Email Address",
                     hintText: "name@company.com",
                     leading: "assets/icons/email.svg",
                   ),
                   const SizedBox(height: 32),
-                  CustomButton(onTap: onSubmit, text: "Send OTP"),
+                  Obx(
+                    () => CustomButton(
+                      onTap: onSubmit,
+                      isLoading: controller.isLoading.value,
+                      text: "Send OTP",
+                    ),
+                  ),
                   const SizedBox(height: 32),
                   Row(
                     spacing: 16,
@@ -68,7 +77,7 @@ class ForgotPassword extends StatelessWidget {
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              // Handle onTap here
+                              Get.back();
                             },
                         ),
                       ],

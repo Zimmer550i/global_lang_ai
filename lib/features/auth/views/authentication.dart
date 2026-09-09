@@ -9,7 +9,9 @@ import 'package:global_lang_ai/core/widgets/custom_button.dart';
 import 'package:global_lang_ai/core/widgets/custom_loading.dart';
 import 'package:global_lang_ai/core/widgets/custom_text_field.dart';
 import 'package:global_lang_ai/features/auth/controllers/auth_controller.dart';
+import 'package:global_lang_ai/features/auth/controllers/startup_controller.dart';
 import 'package:global_lang_ai/features/auth/views/forgot_password.dart';
+import 'package:global_lang_ai/features/auth/views/verification.dart';
 
 class Authentication extends StatefulWidget {
   const Authentication({super.key});
@@ -31,6 +33,12 @@ class _AuthenticationState extends State<Authentication> {
     // } else {
     //   customSnackBar(message);
     // }
+
+    if (isLogingIn) {
+      Get.find<StartupController>().goToHome();
+    } else {
+      Get.to(() => Verification());
+    }
   }
 
   @override
