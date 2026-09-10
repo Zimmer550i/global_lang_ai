@@ -7,13 +7,12 @@ import 'package:global_lang_ai/core/utils/app_colors.dart';
 Future<File?> customImagePicker({
   bool isCircular = true,
   bool isSquared = true,
+  ImageSource source = ImageSource.gallery,
 }) async {
   final picker = ImagePicker();
   final cropper = ImageCropper();
 
-  final XFile? pickedImage = await picker.pickImage(
-    source: ImageSource.gallery,
-  );
+  final XFile? pickedImage = await picker.pickImage(source: source);
 
   if (pickedImage != null) {
     final CroppedFile? croppedImage = await cropper.cropImage(

@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:global_lang_ai/features/auth/controllers/auth_controller.dart';
 import 'package:global_lang_ai/features/auth/controllers/startup_controller.dart';
+import 'package:global_lang_ai/features/profile/controllers/support_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../controllers/localization_controller.dart';
 import '../controllers/theme_controller.dart';
@@ -22,6 +23,7 @@ Future<Map<String, Map<String, String>>> init() async {
   Get.lazyPut(() => LocalizationController(sharedPreferences: Get.find()));
   Get.put(StartupController());
   Get.put(AuthController());
+  Get.put(SupportController());
 
   //Retrieving localized data
   Map<String, Map<String, String>> _languages = Map();

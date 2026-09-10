@@ -34,16 +34,11 @@ class UsageMetrics extends StatelessWidget {
           metrics(
             "Characters Translated",
             "428k / 500k",
-            0.6,
+            0.4,
             AppColors.yellow,
           ),
-          metrics(
-            "Characters Translated",
-            "428k / 500k",
-            0.6,
-            AppColors.primary,
-          ),
-          metrics("Characters Translated", "428k / 500k", 0.6, AppColors.error),
+          metrics("Voice Minutes Used", "12 / 60 min", 0.2, AppColors.primary),
+          metrics("Documents Processed", "84 / 100", 0.6, AppColors.error),
         ],
       ),
     );

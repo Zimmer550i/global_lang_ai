@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:global_lang_ai/core/utils/app_colors.dart';
 import 'package:global_lang_ai/core/utils/custom_svg.dart';
 
 // ──────────────────────────────────────────────
@@ -39,7 +40,11 @@ class Logo extends StatelessWidget {
           width: size,
         ),
         if (showName)
-          CustomSvg(asset: "$_logoName$_logoExtension", width: size * 4),
+          CustomSvg(
+            asset: "$_logoName$_logoExtension",
+            width: size * 4,
+            color: isWhite ? Colors.white : AppColors.primary,
+          ),
       ],
     );
   }
