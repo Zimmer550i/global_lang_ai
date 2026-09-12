@@ -8,6 +8,7 @@ import 'package:global_lang_ai/core/widgets/custom_app_bar.dart';
 import 'package:global_lang_ai/features/home/views/history.dart';
 import 'package:global_lang_ai/features/home/views/notifications.dart';
 import 'package:global_lang_ai/features/home/widgets/progression.dart';
+import 'package:global_lang_ai/features/learning/views/learning.dart';
 import 'package:global_lang_ai/features/profile/views/profile.dart';
 
 /*
@@ -31,7 +32,13 @@ class _HomeState extends State<Home> {
     CliclableButtonModel(iconName: "mic", title: "Voice"),
     CliclableButtonModel(iconName: "document", title: "Documents"),
     CliclableButtonModel(iconName: "chat", title: "AI Chat"),
-    CliclableButtonModel(iconName: "learning", title: "Learning"),
+    CliclableButtonModel(
+      iconName: "learning",
+      title: "Learning",
+      onTap: () {
+        Get.to(() => Learning());
+      },
+    ),
   ];
 
   final List<CliclableButtonModel> workFlowShortcuts = [

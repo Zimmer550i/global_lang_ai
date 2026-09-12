@@ -25,6 +25,7 @@ dependencies:
   google_fonts: ^8.2.1
   motor: ^1.1.0
   pinput: ^6.0.2
+  flutter_tts: ^4.2.5
 
 dev_dependencies:
   flutter_test:

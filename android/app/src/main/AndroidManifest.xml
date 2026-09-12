@@ -1,6 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"/>
 
+    <!-- For Flutter TTS -->
+    <queries>
+      <intent>
+        <action android:name="android.intent.action.TTS_SERVICE" />
+      </intent>
+    </queries>
+
     <!-- For Url Launcher -->
     <queries>
       <intent>
